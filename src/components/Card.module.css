@@ -1,0 +1,45 @@
+.divCard{
+    background:white;
+    border-radius:5px;
+    max-width: 300px;
+    margin:auto;
+}
+.titleCard{
+    margin:0;
+    padding:0 .5em;
+    position:relative;
+    top:290px;
+    background:rgba(0,0,0,.6);
+    color:white;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0px;
+}
+
+.divCard img{
+    width: 100%;
+}
+.headerCard{
+    display:flex;
+    justify-content: space-between;
+}
+
+.headerCard button{
+    margin:.3em;
+    padding: .3em .5em;
+    border-radius:5px;
+    background:tomato;
+    color:white;
+    border:0;
+}
+.bodyCard{
+    display:flex;
+    justify-content: space-around;
+}
+.bodyCard h3{
+    margin:0;
+    padding:.5em 0;
+}
+.bodyCard p{
+    margin:0;
+    padding:.6em 0;
+}
