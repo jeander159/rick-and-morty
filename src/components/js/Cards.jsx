@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
-import styles from './Cards.module.css';
+import styles from '../css/Cards.module.css';
 
 export default function Cards(props) {
    // console.log(props)
@@ -13,7 +13,7 @@ export default function Cards(props) {
                   species={character.species}
                   gender={character.gender}
                   image={character.image}
-                  onClose={() => window.alert('Emulamos que se cierra la card')}
+                  onClose={() => props.onClose(character.id)}
             />
          ))
       }
