@@ -1,8 +1,12 @@
 import './App.css'
 // import Card from './components/js/Card.jsx'
 import React, { useState } from 'react';
+import {Routes,Route,useLocation} from 'react-router-dom';
 import Cards from './components/js/Cards.jsx'
 import Nav from './components/js/Nav.jsx'
+import About from './components/js/About'
+import Detail from './components/js/Detail'
+import Form from './components/js/Form'
 // import characters, { Rick } from './data.js'
 // import characters from './data.js'
 
@@ -16,16 +20,13 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const onSearch = (action) => {
     // setCharacters([...characters, example])
+    let idCharacter = (action==='random')?Math.floor(Math.random(character)*100):character;
    
-    let character1 = characters.filter(char => char.id === parseInt(character));
+    let character1 = characters.filter(char => char.id === parseInt(idCharacter));
     if (character1.length > 0) {
-      window.alert('Personaje duplicado')
+      window.alert('Personaje duplicado: '+character1[0].name)
       return null;
     }
-
-    let idCharacter;
-    idCharacter = (action==='random')?Math.floor(Math.random(character)*100):character;
-    
 
 
     fetch(`https://rickandmortyapi.com/api/character/${idCharacter}`)
@@ -60,24 +61,47 @@ function App() {
     setCharacters(characters.filter((char) => char.id !== id))
   }
 
+  console.log(useLocation())
+
+  let [session, setSession] = useState(false);
+
+  
+
+
   return (
     <div className='App' style={{ padding: '25px' }}>
       <div>
+        {(session) &&
         <Nav
           onSearch={onSearch}
           character={character}
           handleChange={handleChange}
-        />
+        />}
       </div><hr />
-      <div>
-        <Cards
+      {/* <div> */}
+        {/* <Cards
           characters={characters}
           onClose={onClose}
-        />
-      </div>
+        /> */}
+      {/* </div> */}
       <hr />
+
+      
+      <Routes>
+
+        <Route path='/' element={<Form/>}/>
+        <Route path='/home' element={
+          <Cards
+            characters={characters}
+            onClose={onClose}
+          />
+        }/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/detail/:detailId' element={<Detail/>}/>
+      </Routes>
+      
     </div>
   )
 }
 
-export default App
+export default App;

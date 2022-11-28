@@ -1,6 +1,19 @@
 .divSearchBar{
     margin:1em;
     font-size:1.2em;
+    display:flex;
+    justify-content: space-between;
+}
+
+.divSearchBar a{
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.divSearchBar .divInputs{
+    width:80%;
+    
 }
 .divSearchBar input{
     padding:.5em 1em;

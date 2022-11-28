@@ -1,0 +1,29 @@
+.divCharacter{
+    color:white;
+    font-size: 1.3em;
+    display:flex;
+    justify-content: space-around;
+    padding:3em;
+    width:80%;
+    margin:auto;
+    flex-wrap:wrap;
+}
+
+.divCharacter h2{
+    color:#E9C962;
+    font-size: 2em;
+}
+.characterImage img{
+    border-radius:50%;
+}
+.characterButton button{
+    background:#E9C962;
+    color:#18192B;
+    /* font-weight: bolder; */
+    border-radius: 5px;
+    padding:.6em 4em;
+    cursor: pointer;
+    border:1px solid #E9C962;
+    margin:auto;
+    font-size:1.1em;
+}

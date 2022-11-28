@@ -1,0 +1,24 @@
+.divLogin{
+    background: rgba(0,0,0,.5);
+    width:300px;
+    margin:150px auto;
+    padding:1.5em 1em;
+    border-radius: 5px;
+    color:white
+}
+.divLogin input{
+    padding:.4em;
+    margin:.5em;
+    border-radius: 5px;
+    border:1px solid gray;
+}
+.divLogin button{
+    background:#E9C962;
+    color:black;
+    border-radius: 5px;
+    padding:.6em 4em;
+    margin:1em 1em 0 0;
+    cursor: pointer;
+    border:1px solid #E9C962;
+    width:80%;
+}
