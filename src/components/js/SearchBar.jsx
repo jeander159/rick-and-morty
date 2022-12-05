@@ -12,7 +12,7 @@ export default function SearchBar(props) {
    
    return (
       <div className={styles.divSearchBar}>
-         <NavLink to='/' style={({ isActive }) => isActive ? { color: "#E9C962" } : null }>
+         <NavLink to='/home' style={({ isActive }) => isActive ? { color: "#E9C962" } : null }>
             HOME
          </NavLink>
          <div className={styles.divInputs}>

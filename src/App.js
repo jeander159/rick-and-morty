@@ -1,7 +1,7 @@
 import './App.css'
 // import Card from './components/js/Card.jsx'
 import React, { useState } from 'react';
-import {Routes,Route,useLocation} from 'react-router-dom';
+import {Routes,Route,useLocation,useNavigate} from 'react-router-dom';
 import Cards from './components/js/Cards.jsx'
 import Nav from './components/js/Nav.jsx'
 import About from './components/js/About'
@@ -61,17 +61,28 @@ function App() {
     setCharacters(characters.filter((char) => char.id !== id))
   }
 
-  console.log(useLocation())
+  // console.log(useLocation())
 
-  let [session, setSession] = useState(false);
+const navigate = useNavigate();
+const [access, setAccess] = useState(false);
+const username = 'jeander@gmail.com';
+const password = '123456';
 
-  
+function login(userData) {
+   if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate('/home');
+   }
+}
+React.useEffect(() => {
+  !access && navigate('/');
+}, [access]);
 
 
   return (
     <div className='App' style={{ padding: '25px' }}>
       <div>
-        {(session) &&
+        {(access) &&
         <Nav
           onSearch={onSearch}
           character={character}
@@ -89,7 +100,11 @@ function App() {
       
       <Routes>
 
-        <Route path='/' element={<Form/>}/>
+        <Route path='/' element={
+          <Form
+            login={login}
+          />
+        }/>
         <Route path='/home' element={
           <Cards
             characters={characters}

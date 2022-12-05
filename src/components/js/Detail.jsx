@@ -9,7 +9,7 @@ const Detail = ()=>{
 
     let navigate = useNavigate();
     const returnHome = ()=>{
-        return navigate('/')
+        return navigate('/home')
     }
     // const backToHome = ()=>navigate('/');
 
