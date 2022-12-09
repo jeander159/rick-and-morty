@@ -9,6 +9,7 @@ const Nav = (props)=>{
                 onSearch={props.onSearch}
                 character={props.character}
                 handleChange={props.handleChange}
+                logout={props.logout}
             />
         </div>
     )

@@ -8,7 +8,7 @@
     transform: rotateY(180deg);
 }
 
-.containerCard:hover .divBlanco {
+.containerCard:hover .divCarWhite {
     z-index:100;
     transform: rotateY(360deg);
 }
@@ -17,13 +17,12 @@
     border-radius:5px;
     max-width: 300px;
     margin:1em auto;
-  
     position: relative;
     z-index: 2;
     transition: all 0.3s linear;
 }
 
-.divBlanco{
+.divCarWhite{
     margin:1em auto;
     border-radius:5px;
     background:white;
@@ -32,6 +31,13 @@
     height:100%;
     transition: all 0.3s linear;
     transform: rotateY(180deg);
+}
+.divCarWhite h2 a{
+    color:#191C2A;
+}
+.divCarWhite img{
+    border-radius:50%;
+    width:50%;
 }
 
 .titleCard{
@@ -66,6 +72,10 @@
     color:white;
     border:0;
     cursor:pointer;
+}
+.headerCard .btn{
+    background:white;
+    
 }
 .bodyCard{
     display:flex;

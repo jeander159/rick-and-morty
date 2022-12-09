@@ -7,6 +7,7 @@ import Nav from './components/js/Nav.jsx'
 import About from './components/js/About'
 import Detail from './components/js/Detail'
 import Form from './components/js/Form'
+import Favorites from './components/js/Favorites';
 // import characters, { Rick } from './data.js'
 // import characters from './data.js'
 
@@ -74,6 +75,13 @@ function login(userData) {
       navigate('/home');
    }
 }
+
+function logout() {
+  
+    setAccess(false);
+    navigate('/');
+  
+}
 React.useEffect(() => {
   !access && navigate('/');
 }, [access]);
@@ -81,14 +89,16 @@ React.useEffect(() => {
 
   return (
     <div className='App' style={{ padding: '25px' }}>
+      <div class="estrellas"></div>
       <div>
         {(access) &&
         <Nav
           onSearch={onSearch}
           character={character}
           handleChange={handleChange}
+          logout={logout}
         />}
-      </div><hr />
+      </div>
       {/* <div> */}
         {/* <Cards
           characters={characters}
@@ -113,6 +123,7 @@ React.useEffect(() => {
         }/>
         <Route path='/about' element={<About/>}/>
         <Route path='/detail/:detailId' element={<Detail/>}/>
+        <Route path='/favorites' element={<Favorites/>}/>
       </Routes>
       
     </div>
