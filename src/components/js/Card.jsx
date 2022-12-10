@@ -61,12 +61,11 @@ function Card(props) {
                <h2><Link to={`/detail/${props.id}`}>{props.name}</Link></h2>
                <h3><b>GENDER: </b>{props.gender}</h3>
                <p><b>SPECIES: </b>{props.species}</p>
+               <p><b>STATUS: </b>{props.status}</p>
                <Link to={`/detail/${props.id}`}>
                   <img  src={props.image} alt={props.name} />
                </Link>
-               
             </div>
-            
          </div>
          <div className={styles.divCard}>
             
@@ -75,7 +74,7 @@ function Card(props) {
                   isFav ? (<button className={styles.btn} onClick={handleFavorite}>❤️</button>) 
                         : (<button className={styles.btn} onClick={handleFavorite}>🤍</button>)
                }
-               <h2 className={styles.titleCard}>{props.name}</h2>
+               <h2 className={styles.titleCard}>{props.id}-{props.name}</h2>
                <button onClick={props.onClose}>X</button>
             </div>
             <Link to={`/detail/${props.id}`}>

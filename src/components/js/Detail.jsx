@@ -40,6 +40,8 @@ const Detail = ()=>{
                     <p>STATUS: {character.status}</p>
                     <p>SPECIE: {character.species}</p>
                     <p>GENDER: {character.gender}</p>
+                    <p>ORIGIN: {character.origin?.name}</p>
+                    <p>{(character.type)?'TYPE: '+ character.type:''}</p>
                 </div>
                 {/* <h2>{character.origin.name}</h2> */}
             </div>

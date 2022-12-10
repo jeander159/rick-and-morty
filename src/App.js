@@ -1,13 +1,14 @@
 import './App.css'
 // import Card from './components/js/Card.jsx'
 import React, { useState } from 'react';
-import {Routes,Route,useLocation,useNavigate} from 'react-router-dom';
+import {Routes,Route,useNavigate} from 'react-router-dom';
 import Cards from './components/js/Cards.jsx'
 import Nav from './components/js/Nav.jsx'
 import About from './components/js/About'
 import Detail from './components/js/Detail'
 import Form from './components/js/Form'
 import Favorites from './components/js/Favorites';
+import Error404 from './components/js/Error404';
 // import characters, { Rick } from './data.js'
 // import characters from './data.js'
 
@@ -33,7 +34,7 @@ function App() {
     fetch(`https://rickandmortyapi.com/api/character/${idCharacter}`)
       .then((response) => response.json())
       .then((data) => {
-
+        console.log(data)
         if (data.name) {
           // setCharacters((oldChars) => [...oldChars, data]);
           setCharacters([...characters, data]);
@@ -89,7 +90,7 @@ React.useEffect(() => {
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <div class="estrellas"></div>
+      <div className="estrellas"></div>
       <div>
         {(access) &&
         <Nav
@@ -124,6 +125,7 @@ React.useEffect(() => {
         <Route path='/about' element={<About/>}/>
         <Route path='/detail/:detailId' element={<Detail/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
+        <Route path='*' element={<Error404/>}/>
       </Routes>
       
     </div>

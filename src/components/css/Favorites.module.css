@@ -1,0 +1,9 @@
+.divSelects select{
+    /* background:transparent; */
+    /* color:white; */
+    border-radius: 5px;
+    padding:.4em .5em;
+    margin:.4em 1em;
+    cursor: pointer;
+    border:1px solid #E9C962;
+}
